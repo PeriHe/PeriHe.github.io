@@ -87,6 +87,12 @@ service-worker: true
 # LINKs
 LINKs: [
     {
+        title: "我的github",
+        href: "https://github.com/PeriHe"
+    },{
+        title: "我的博客-博客园",
+        href: "http://www.cnblogs.com/hpl525"
+    },{
         title: "牛客网",
         href: "https://www.nowcoder.com"
     },{
@@ -95,12 +101,6 @@ LINKs: [
     },{
         title: "Element",
         href: "http://element-cn.eleme.io/#/zh-CN"
-    },{
-        title: "我的github",
-        href: "https://github.com/PeriHe"
-    },{
-        title: "我的博客",
-        href: "http://www.cnblogs.com/hpl525"
     }
     
 ]
