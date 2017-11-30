@@ -95,6 +95,12 @@ LINKs: [
     },{
         title: "Element",
         href: "http://element-cn.eleme.io/#/zh-CN"
+    },{
+        title: "我的github",
+        href: "https://github.com/PeriHe"
+    },{
+        title: "我的博客",
+        href: "http://www.cnblogs.com/hpl525"
     }
     
 ]
