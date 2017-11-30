@@ -84,8 +84,8 @@ service-worker: true
 
 
 
-# Friends
-friends: [
+# LINKs
+LINKs: [
     {
         title: "牛客网",
         href: "https://www.nowcoder.com"

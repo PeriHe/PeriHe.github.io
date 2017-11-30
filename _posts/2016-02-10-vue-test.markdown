@@ -1,0 +1,341 @@
+--
+layout:     post
+title:      "Vue-test"
+date:       2017-08-10 10:12:29
+author:     "PeriHe"
+header-img: "img/post-bg-blog.jpg"
+catalog: true
+tags:
+    - Vue
+---
+
+>Vue组件开发
+一、组件化开发
+
+WEB中的组件其实就是页面组成的一部分，它是一个具有独立逻辑的功能或界面，同时又能根据规定的接口规则进行融合，变成一个完整的应用。比如导航，列表，弹窗等。
+
+前端组件化开发的核心思路就是将一个巨大复杂的东西分成粒度合理的小东西。
+
+优点:提高开发效率，方便重复使用，简化调试步骤，提升整个项目的可维护性，便于协同开发。
+
+Link : Element可以学习里面的组件开发。
+
+二、Vue中的组件
+
+vue中的组件是一个自定义标签，Vue.js的编译器为它添加独立的功能。vue也可以拓展原生的html元素，封装可重用的代码。
+
+组件的基本组成：样式结构，行为逻辑，数据。
+
+三、注册组件
+
+全局注册
+
+可以在任何模板中使用，使用之前要先注册。
+
+语法：使用Vue.component(组件名,选项对象)
+
+命名约定：驼峰（camelCase）,烤串（kebab-case）
+
+在html中使用组件：使用烤串命名法。
+
+例：一个简单的下拉组件
+
+复制代码
+Vue.component("pull-list",{
+    template:`<section class="warp">
+            <div class="searchIpt clearFix">
+                <div class="clearFix">
+                    <input type="text" class="keyWord" value="" />
+                    <input type="button" value="查询">
+                    <span></span>
+                </div>
+                <ul class="list">
+                    <li>html+css</li>
+                    <li>html5+css3</li>
+                    <li>javascript</li>
+                    <li>vue</li>
+                    <li>jquery</li>
+                </ul>
+            </div>
+        </section>`
+});
+new Vue({
+    el:"#app",
+});
+复制代码
+ 
+
+在html中的使用：
+
+<div id="app">
+    <h2>自定义的下拉框</h2>
+    <pull-list></pull-list>    
+</div>
+ 
+
+局部注册
+
+在组件实例中通过选项对象注册，只在所注册的作用域使用。
+
+如下，将component写在实例中，这样只能在#app中使用。
+
+复制代码
+new Vue({
+    el:"#app",
+    component:{
+        "custom-select":{
+            template:`<section class="warp">
+                <div class="searchIpt clearFix">
+                    <div class="clearFix">
+                        <input type="text" class="keyWord" value="" />
+                        <input type="button" value="查询">
+                        <span></span>
+                    </div>
+                    <ul class="list">
+                        <li>html+css</li>
+                        <li>html5+css3</li>
+                        <li>javascript</li>
+                        <li>vue</li>
+                        <li>jquery</li>
+                    </ul>
+                </div>
+            </section>`
+        }
+    }
+});  
+复制代码
+ 
+
+Question1:有了组件，怎么向组件中传递自定义的数据呢？
+
+四、组件间的通信
+
+父组件要给子组件传递数据，子组件需要将它内部发生的事情告诉父组件。
+
+父组件 -> 子组件
+
+组件实例的作用域是独立的，不能在子组件直接用父组件的数据。
+
+可以在组件上使用自定义属性绑定数据，在组件中显式的用props声明自定义属性名。
+
+注：html里属性名用烤串的方式，props中属性名用驼峰的方式。
+
+ 
+
+step1:props中声明自定义属性：props:["btnValue"]。
+
+step2:template模板中绑定属性：<input type="button" v-bind:value="btnValue">
+
+ 
+
+复制代码
+<div id="app">
+    <h2>自定义的下拉框</h2>
+    <custom-select btn-value="查询"></custom-select>    
+    <h2>自定义的下拉框</h2>
+    <custom-select btn-value="搜索"></custom-select>    
+</div>
+复制代码
+ 
+
+step3:html中使用传值：<custom-select btn-value="查询"></custom-select>
+
+ 
+
+ 
+
+Question2:下拉列表在点击输入框时才显示/隐藏？
+
+在组件里添加一个data属性，然后通过绑定click事件来进行显隐控制，用到v-show和v-on指令：
+
+data:function(){
+    return {
+        selectShow:false
+    };
+},
+<input type="text" class="keyWord" value="" @click="selectShow = !selectShow" />
+<custom-li v-show="selectShow"></custom-li>
+上面的<custom-li>为ul列表组件，是<custom-select>的子组件。
+
+注：组件中的data必须是函数。每个组件都是独立的，如果他们共用一个对象，在更改一个组件数据的时候，会影响其他组件；如果是函数的话，每个组件都有自己独立的数据，相互之间不会影响。
+
+ 
+
+Question3:怎样传入不同的列表项内容呢？
+
+#app是<custom-select>的父组件，<custom-select>是<custom-li>的父组件。这样的传递是从父组件到子组件再往内传递。与上Question1为一层的传递相同，依次进行即可。
+
+step1：实例化对象中要有数据
+
+data:{
+    list1:["北京","上海","杭州"],
+    list2:["2017-10-12","2017-10-20","2017-10-23"]
+}
+step2:html中使用组件并绑定属性
+
+<custom-select btn-value="查询" v-bind:list="list1"></custom-select>    
+<custom-select btn-value="搜索" v-bind:list="list2"></custom-select>    
+step3:props中添加声明自定义属性名
+
+props:["btnValue","list"],
+step4：子组件<custom-li>中绑定list属性
+
+<custom-li v-show="selectShow" v-bind:list="list"></custom-li>
+step5：子组件添加声明自定义属性，模板中遍历list获得li
+
+props:["list"],
+template:`<ul class="list">
+                <li v-for="item of list">{{item}}</li>
+            </ul>`
+这样就将数据传递了下来。
+
+ 
+
+Question4:点击列表项时相应显示在输入框里？这里用到子组件向父组件的传递
+
+子组件 -> 父组件
+
+需要用到自定义事件，父组件用$on监听自定义事件，$emit触发父组件所关心的自定义事件。
+
+
+
+继续上面的例子：
+
+step1 :  custom-select组件的data中添加空的val，作为输入框要显示的内容
+
+step2：将val绑定到input框
+
+step3:在custom-li上绑定自定义事件
+
+<custom-li v-show="selectShow" v-bind:list="list" v-on:recieve="changeValueHandle"></custom-li>
+step4:在custom-select的methods里添加changeValueHandle函数
+
+changeValueHandle:function(value){
+    this.val=value;
+}
+step5:在li上添加点击事件
+
+<li v-for="item of list" @click="selectValueHandle(item)">{{item}}</li>
+step6:在custom-li组件的methds里添加selectValueHandle函数，用来触发自定义事件
+
+selectValueHandle:function(item){
+    //告知父级，改变val的值，需要触发一个自定义事件
+    this.$emit("recieve",item);
+}
+此时点击列表项就可以相应的显示到输入框了。
+
+ 五、受限制的元素
+
+vue是在浏览器解析和标准化html后才能获取的模板内容，所以有些元素限制了它能包裹的元素。简单来说就是ul中只能放li，有些元素中放入了自定义元素，不符合w3c标准会报错。
+
+变通的方法是使用特殊属性is来拓展html标签。
+
+六、单向数据流
+
+数据从父组件流向（传递给）子组件，只能单向绑定。在子组件内部不允许修改父组件传递过来的数据。
+
+解决方案：改变props的情况。
+
+1.作为data中局部数据的初始值使用。
+
+2.作为子组件的computed属性
+
+七、props验证
+
+组件可以为props绑定验证要求。如果未绑定验证要求，vue会报错。
+
+复制代码
+props:{
+    count:{
+        type:[Number,String],
+        // default:10,
+        // required:true,
+        validator:function(value){
+            console.log(value);
+            return value>10;
+        }
+    }
+},
+复制代码
+ 
+
+ 
+
+八、内容分发
+
+使用一种方式混合父组件的内容和子组件自己的模板，这个过程称为内容分发。简单来说就是定制模板，自定义子组件中的内容。向组件的html标签中添加内容：
+
+<custom>
+    <div>我是html标签</div>
+</custom>
+单个slot
+
+向组件模板中加入<slot>标签，即可将html中自定义的内容呈现在slot位置，没有内容则显示slot模板中的默认内容：
+
+复制代码
+template:`
+    <div>
+        <slot>我是默认的结构</slot>
+        <p>这是第一个提醒</p>
+        <p>这是第二个提醒</p>
+        <p>这是第三个提醒</p>
+    </div>
+`
+复制代码
+当然，如果将slot标签包裹整个结构，则显示为父组件的内容。
+
+具名slot
+
+slot标签可以用name属性来配置如何分发内容：
+
+复制代码
+template:`
+    <div>
+        <slot name="one"><p>这是第一个提醒</p></slot>
+        <slot name="two"><p>这是第二个提醒</p></slot>
+        <p>这是第三个提醒</p>
+    </div>
+`
+复制代码
+在html中对应要替换的部分：
+
+<custom>
+    <div slot="one">我是html标签</div>
+</custom>
+这样，结果就为：
+
+我是html标签
+
+这是第二个提醒
+
+这是第三个提醒
+
+编译作用域
+
+父组件模板的内容在父组件作用域内编译，子组件模板的内容在子组件作用域内编译。
+
+这样渲染的数据时父组件的数据：
+
+<custom>
+    {{ message }}
+</custom>
+这样渲染的是子组件的数据：
+
+复制代码
+template:`
+    <div>
+        {{message}}
+        <p>这是第一个提醒</p>    
+        <slot></slot>    
+    </div>
+`
+ 
+
+复制代码
+ 
+
+ 
+
+Demo：下拉选择列表组件
+
+ View Code
