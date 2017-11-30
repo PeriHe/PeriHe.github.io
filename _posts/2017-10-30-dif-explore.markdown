@@ -2,8 +2,8 @@
 layout:     post
 title:      "css兼容篇"
 date:       2017-10-30 17:27:00
-author:     "happyli"
-header-img: "img/about-bg-walle.jpg"
+author:     "PeriHe"
+header-img: "img/about-bg-blog.jpg"
 tags:
     - 兼容
 ---
@@ -14,11 +14,11 @@ tags:
 
 css hack ：针对不同的浏览器写不同的css样式的过程，就叫做css hack ！在开发过程中有其他办法尽量尽量尽量不使用hack！
 
-IE10及之前的浏览器: \9   
+ \9   IE10及之前的浏览器识别；
 
-IE7及以前:+ *  
++ *  IE7及以前
 
-IE6及以前:_    
+_    IE6及以前 
 
 1、HTML5标签不兼容问题
 
