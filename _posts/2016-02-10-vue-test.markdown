@@ -1,7 +1,7 @@
---
+---
 layout:     post
 title:      "Vue-test"
-date:       2017-08-10 10:12:29
+date:       2017-02-10 10:12:29
 author:     "PeriHe"
 header-img: "img/post-bg-blog.jpg"
 catalog: true
@@ -9,7 +9,7 @@ tags:
     - Vue
 ---
 
->Vue组件开发
+> Vue组件开发
 一、组件化开发
 
 WEB中的组件其实就是页面组成的一部分，它是一个具有独立逻辑的功能或界面，同时又能根据规定的接口规则进行融合，变成一个完整的应用。比如导航，列表，弹窗等。

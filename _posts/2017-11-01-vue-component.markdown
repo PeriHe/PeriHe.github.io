@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Vue组件"
-date:       2017-08-10 10:12:29
+date:       2017-11-01 10:12:29
 author:     "PeriHe"
 header-img: "img/post-bg-blog.jpg"
 catalog: true
