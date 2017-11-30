@@ -1,0 +1,103 @@
+# Site settings
+title: PeriHe Blog
+SEOTitle: 何佩莉的博客 | PeriHe Blog
+header-img: img/home-bg.jpg
+email: hpl@hepeili.cn
+description: "关于前端学习笔记 | 何佩莉，Web & Mobile Lover，web developer | 这里是 @PeriHe何佩莉 的个人博客，与你一起发现更大的世界。"
+keyword: "何佩莉, PeriHe, 何佩莉的博客, PeriHe Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端"
+url: "https://haaappyli.github.io"  
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     PeriHe
+zhihu_username:     PeriHe
+github_username:    PeriHe
+twitter_username:   PeriHe
+#facebook_username:  Happyli
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+disqus_username: PeriHe
+
+# Netease setttings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: hepeili.cn
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "你好哇，PeriHe,见到你真高兴。<br>自歌自舞自开怀，无拘无束无碍~"
+sidebar-avatar: /img/avatar-hpl.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    {
+        title: "牛客网",
+        href: "https://www.nowcoder.com"
+    },{
+        title:"commonJS规范",
+        href :"http://javascript.ruanyifeng.com/nodejs/module.html#toc0"
+    },{
+        title: "咪路咪路",
+        href: "http://www.bilibili.com/video/av2186616/index_35.html#page=1/"
+    },{
+        title: "网易云音乐",
+        href: "http://music.163.com/#/my/m/music/playlist?id=516821235"
+    }
+    
+]
