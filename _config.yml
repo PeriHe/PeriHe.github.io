@@ -90,8 +90,8 @@ friends: [
         title: "牛客网",
         href: "https://www.nowcoder.com"
     },{
-        title:"commonJS规范",
-        href :"http://javascript.ruanyifeng.com/nodejs/module.html#toc0"
+        title: "commonJS规范",
+        href: "http://javascript.ruanyifeng.com/nodejs/module.html#toc0"
     },{
         title: "咪路咪路",
         href: "http://www.bilibili.com/video/av2186616/index_35.html#page=1/"
