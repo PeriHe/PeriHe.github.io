@@ -67,7 +67,7 @@ ga_domain: hepeili.cn
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "你好哇，PeriHe,见到你真高兴。<br>Don't wish it were easier, wish you were better ~"
+sidebar-about-description: "<br>Don't wish it were easier, wish you were better ~"
 sidebar-avatar: /img/avatar-hpl.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
