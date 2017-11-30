@@ -12,10 +12,10 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     PeriHe
-zhihu_username:     PeriHe
+cnblogs_username:     PeriHe
+# zhihu_username:     PeriHe
 github_username:    PeriHe
-twitter_username:   PeriHe
+# wechat_username:   PeriHe
 #facebook_username:  Happyli
 # linkedin_username:  firstname-lastname-idxxxx
 
@@ -67,7 +67,7 @@ ga_domain: hepeili.cn
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "你好哇，PeriHe,见到你真高兴。<br>自歌自舞自开怀，无拘无束无碍~"
+sidebar-about-description: "你好哇，PeriHe,见到你真高兴。<br>Don't wish it were easier, wish you were better ~"
 sidebar-avatar: /img/avatar-hpl.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -93,8 +93,8 @@ friends: [
         title: "commonJS规范",
         href: "http://javascript.ruanyifeng.com/nodejs/module.html#toc0"
     },{
-        title: "网易云音乐",
-        href: "http://music.163.com/#/my/m/music/playlist?id=516821235"
+        title: "Element",
+        href: "http://element-cn.eleme.io/#/zh-CN"
     }
     
 ]
