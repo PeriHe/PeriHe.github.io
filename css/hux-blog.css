@@ -479,7 +479,7 @@ pre code {
   width: 100%;
 }
 .post-container .pager li > a > span {
-  color: #cccccc;
+  color: #7B7B7B;
   font-weight: normal;
   letter-spacing: 0.5px;
 }
@@ -667,7 +667,7 @@ pre code {
 }
 .intro-header {
   background: no-repeat center center;
-  background-color: #cccccc;
+  background-color: #7B7B7B;
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -797,7 +797,7 @@ pre code {
 }
 .post-preview > .post-meta {
   font-family: 'Lora', 'Times New Roman', serif;
-  color: #cccccc;
+  color: #7B7B7B;
   font-size: 16px;
   font-style: italic;
   margin-top: 0;
@@ -990,7 +990,7 @@ form .row:first-child .floating-label-form-group {
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
 .pager .disabled > span {
-  color: #cccccc;
+  color: #7B7B7B;
   background-color: #404040;
   cursor: not-allowed;
 }
