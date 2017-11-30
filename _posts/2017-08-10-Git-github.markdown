@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Test-Git与github"
+title:      "[Test]-Git与github"
 date:       2017-08-10 10:12:29
 author:     "PeriHe"
 header-img: "img/post-bg-blog.jpg"

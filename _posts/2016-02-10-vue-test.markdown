@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Test-Vue"
+title:      "[Test]-Vue"
 date:       2017-02-10 10:12:29
 author:     "PeriHe"
 header-img: "img/post-bg-blog.jpg"
