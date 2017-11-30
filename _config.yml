@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: hpl@hepeili.cn
 description: "关于前端学习笔记 | 何佩莉，Web & Mobile Lover，web developer | 这里是 @PeriHe何佩莉 的个人博客，与你一起发现更大的世界。"
 keyword: "何佩莉, PeriHe, 何佩莉的博客, PeriHe Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端"
-url: "https://PeriHe.github.io"  
+url: "http://www.hepeili.cn"  
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
