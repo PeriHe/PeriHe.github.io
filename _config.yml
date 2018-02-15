@@ -5,8 +5,8 @@ header-img: img/home-bg.jpg
 email: hpl@hepeili.cn
 description: "关于前端学习笔记 | 何佩莉，Web & Mobile Lover，web developer | 这里是 @PeriHe何佩莉 的个人博客，与你一起发现更大的世界。"
 keyword: "何佩莉, PeriHe, 何佩莉的博客, PeriHe Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端"
-url: "http://www.hepeili.cn"  
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+url: "http://www.blog.hepeili.cn"  
+baseurl: "/blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
@@ -16,8 +16,6 @@ RSS: false
 # zhihu_username:     PeriHe
 github_username:    PeriHe
 # wechat_username:   PeriHe
-# facebook_username:  Happyli
-# linkedin_username:  firstname-lastname-idxxxx
 
 
 
@@ -61,7 +59,7 @@ netease_comment: false
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: hepeili.cn
+ga_domain: bolg.hepeili.cn
 
 
 
